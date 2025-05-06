@@ -65,4 +65,3 @@ The steps in detail:
         line-height: 1;
         }
         ....
-    -

@@ -1,5 +1,5 @@
 # librenms-geojson
-Show Librenms map with floor view
+Show Librenms map with floor view / Indoor Map
 
 https://community.librenms.org/t/can-i-create-a-custom-floormap-floorplan-and-plot-devices-on-it/22963/18?u=lynch4fr
 

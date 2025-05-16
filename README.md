@@ -109,7 +109,7 @@ The steps in detail:
                     } // fin de ELSE
                     devices[device_id] = true;
      - To add le level floor, we use the librenms Tab "Notes": exemple "etage=0"
-     - Add 1 line to 504 /librenms/app/Http/Controllers/Maps/MapDataController.php  
-     -           'notes' => $device->notes,
+       - Add 1 line to 504 /librenms/app/Http/Controllers/Maps/MapDataController.php  
+       -           'notes' => $device->notes,
 
 

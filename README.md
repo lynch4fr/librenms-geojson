@@ -65,3 +65,8 @@ The steps in detail:
         line-height: 1;
         }
         ....
+  - OR Add your custom style.css
+  -      View : lnms config:get webui.custom_css
+          Add : lnms config:set webui.custom_css.+ css/custom/styles.css
+        cp style.css to /opt/librenms/html/css/custom
+

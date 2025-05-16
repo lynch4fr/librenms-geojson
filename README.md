@@ -70,6 +70,13 @@ The steps in detail:
          Add : lnms config:set webui.custom_css.+ css/custom/styles.css
          cp style.css to /opt/librenms/html/css/custom
 - vi /librenms/resources/views/map/fullscreen.blade.php
+  - Add Line 143 in function refreshMap() {
+     -      ...
+           .done(function( data ) {
+                //console.log(" Données des équipements reçues :", data);  // DEBUG 
+                window.deviceData = data;  // Stockage des données globalement GEOJSON-MARKER
+            $.each( data, function( device_id, device ) {
+
   - Insert Line 169 [GEOJSON-MARKER] and  the } // Fin de EACH
   -      ...
          } else {

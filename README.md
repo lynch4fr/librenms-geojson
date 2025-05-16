@@ -108,8 +108,9 @@ The steps in detail:
                      }); //fin de EACH
                     } // fin de ELSE
                     devices[device_id] = true;
-     - To add le level floor, we use the librenms Tab "Notes": exemple "etage=0"
-       - Add 1 line to 504 /librenms/app/Http/Controllers/Maps/MapDataController.php  
-       -           'notes' => $device->notes,
+- vi /librenms/app/Http/Controllers/Maps/MapDataController.php  
+  - To add le level floor, we use the librenms Tab "Notes": exemple "etage=0"
+  - Add 1 line to 504 
+  -           'notes' => $device->notes,
 
 

@@ -69,6 +69,8 @@ The steps in detail:
   -      View : lnms config:get webui.custom_css
          Add : lnms config:set webui.custom_css.+ css/custom/styles.css
          cp style.css to /opt/librenms/html/css/custom
+
+Here we manage a part of the marker display according to floor.
 - vi /librenms/resources/views/map/fullscreen.blade.php
   - Insert this 2 lines after line 143 in function refreshMap() {
   -     ...

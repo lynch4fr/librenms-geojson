@@ -71,7 +71,7 @@ The steps in detail:
          cp style.css to /opt/librenms/html/css/custom
 
 
-Here we manage a part of the marker display according to floor.
+TO BE CONTINUE ... here we manage a part of the marker display according to floor.
 - vi /librenms/app/Http/Controllers/Maps/MapDataController.php  
   - To add le level floor, we use the librenms Tab "Notes": exemple "etage=0"
   - Add 1 line to 504 

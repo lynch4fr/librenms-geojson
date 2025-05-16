@@ -70,7 +70,12 @@ The steps in detail:
          Add : lnms config:set webui.custom_css.+ css/custom/styles.css
          cp style.css to /opt/librenms/html/css/custom
 
+
 Here we manage a part of the marker display according to floor.
+- vi /librenms/app/Http/Controllers/Maps/MapDataController.php  
+  - To add le level floor, we use the librenms Tab "Notes": exemple "etage=0"
+  - Add 1 line to 504 
+  -           'notes' => $device->notes,
 - vi /librenms/resources/views/map/fullscreen.blade.php
   - Insert this 2 lines after line 143 in function refreshMap() {
   -     ...
@@ -110,9 +115,5 @@ Here we manage a part of the marker display according to floor.
                      }); //fin de EACH
                     } // fin de ELSE
                     devices[device_id] = true;
-- vi /librenms/app/Http/Controllers/Maps/MapDataController.php  
-  - To add le level floor, we use the librenms Tab "Notes": exemple "etage=0"
-  - Add 1 line to 504 
-  -           'notes' => $device->notes,
 
 

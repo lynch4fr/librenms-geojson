@@ -1,6 +1,8 @@
-//DEBUT code GEOJSON
+    //DEBUT code GEOJSON
 const floorLayers = {};  // Objet pour stocker les couches d'étages
 const floorRefLabels = {};      // Stockage des labels "ref" par étage
+const equipmentLayerGroup = L.layerGroup();
+const allEquipmentMarkers = [];
 
 // Étages disponibles (ajouter plus d'étages si nécessaire)
 const floors = [-1, 0.5, 0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7];  // Liste des étages
@@ -71,6 +73,9 @@ floors.forEach(floor => {
     selector.appendChild(option);
 });
 
+// NEW Définir la variable selectedFloor juste après avoir rempli le sélecteur
+window.selectedFloor = '0';
+
 // Créer un contrôle pour ajouter le sélecteur sur la carte
 const floorControl = L.control({ position: 'topleft' });
 floorControl.onAdd = function () {
@@ -84,7 +89,9 @@ floorControl.addTo(leaflet);
 
 // Gérer le changement d'étage
 selector.addEventListener('change', function () {
-    const selected = this.value;
+//    const selected = this.value;
+      window.selectedFloor = this.value;
+      console.log("Étage sélectionné :", window.selectedFloor); // DEBUG
 
     // Supprimer toutes les couches d’étages et les labels
     Object.keys(floorLayers).forEach(f => {
@@ -95,10 +102,16 @@ selector.addEventListener('change', function () {
     });
 
     // Ajouter la couche sélectionnée
-    if (floorLayers[selected]) {
-        floorLayers[selected].addTo(leaflet);
+    if (floorLayers[selectedFloor]) {
+        floorLayers[selectedFloor].addTo(leaflet);
     }
 
+    // Mettre à jour l'affichage des MRKER équipements quand on change d'étage
+    if (typeof window.updateEquipements === "function" && window.deviceData) {
+        window.updateEquipements(window.deviceData);
+    } else {
+        console.warn("Impossible de mettre à jour les équipements : updateEquipements ou deviceData manquant");
+    }
 });
 
 // Affiche ou masque dynamiquement les labels "ref" selon le niveau de zoom
@@ -128,4 +141,44 @@ leaflet.on('zoomend', function () {
     });
 });
 
-//FIN code GEOJSON
+//SECTION Affichage des marker en fonction de l'etage
+window.updateEquipements = function (data) {
+
+var pinkMarker = L.AwesomeMarkers.icon({
+    icon: 'wifi', // ou 'server' 
+    markerColor: 'pink',
+    prefix: 'fa',
+    iconColor: 'white'
+});
+
+//    console.log("updateEquipements() appelée avec : ", data); // DEBUG
+    $.each(data, function(device_id, device) {
+//    console.log("Traitement de l’équipement :", device_id, device); //DEBUG
+        let etage = null;
+
+        if (device.notes) {
+//        console.log("Notes trouvées pour", device.sname, ":", device.notes); //DEBUG
+            const match = device.notes.match(/etage[-= ]?(\S+)/i);
+            if (match) {
+                etage = match[1];
+            }
+        }
+//        console.log("Comparaison :", etage, "vs", window.selectedFloor) //DEBUG
+
+//	window.selectedFloor = "debug"; //DEBUG affiche TOUT
+        let marker = device_markers[device_id];
+        if (marker) {
+            // Si étage correspond, on l'affiche
+            if (window.selectedFloor === "debug" || etage === window.selectedFloor || etage === null) {
+              if (device.sname && device.sname.toLowerCase().startsWith("ap")) {
+                  marker.setIcon(pinkMarker);
+//                  console.log("AP détecté et affiché en rose :", device.sname); // DEBUG
+              }
+                device_marker_cluster.addLayer(marker);
+            } else {
+                device_marker_cluster.removeLayer(marker);
+            }
+        }
+    });
+}
+//FIN du code GEOJSON

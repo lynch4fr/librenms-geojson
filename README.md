@@ -69,4 +69,36 @@ The steps in detail:
   -      View : lnms config:get webui.custom_css
          Add : lnms config:set webui.custom_css.+ css/custom/styles.css
          cp style.css to /opt/librenms/html/css/custom
+- vi /librenms/resources/views/map/fullscreen.blade.php
+  - Insert Line 169 [GEOJSON-MARKER] and  the } // Fin de EACH
+  -      ...
+         } else {
+        // Debut GEOJSON-MARKER
+                    $.each(data, function(device_id, device) {
+                    //    console.log("Données complètes de l’équipement", device_id, device); // DEBUG
+                        let etage = null;
+                    
+                        // Extraire l'étage depuis device.notes (ex: "etage=3")
+                        if (device.notes) {
+                            const match = device.notes.match(/etage[-= ]?(\S+)/i);
+                            if (match) {
+                                etage = match[1];
+                                console.log("Étage détecté:", device.sname, etage);
+                            }
+                        }
+          // Fin du GEOJSON-MARKER
+                        var marker = L.marker(new L.LatLng(device["lat"],device["lng"]), {title: device["sname"], icon: icon, zIndexOffset: z_offset});
+                        marker.bindPopup("<a href=\"" + device["url"] + "\"><img src=\"" + device["icon"] + "\" width=\"32\" height=\"32\" alt=\"\"> " + device["sname"] + "</a>");
+                        device_marker_cluster.addLayer(marker);
+                        device_markers[device_id] = marker;
+
+                        $.each( device["parents"], function( parent_idx, parent_id ) {
+                            if (parent_id in data && (data[parent_id]["lat"] != device["lat"] || data[parent_id]["lng"] != device["lng"])) {
+                                var line_id = checkParentLink(device, data[parent_id]);
+                                links[line_id] = true;
+                            }
+                        });
+                     }); //fin de EACH
+                    } // fin de ELSE
+                    devices[device_id] = true;
 

@@ -36,7 +36,7 @@ The steps in detail:
   - Export each data in geojson format
   - Copy your geojson files to /librenms/html/tiles
 - vi /librenms/html/js/librenms.js
-  - Add line 277
+  - Add line 277 [CODE ICI GEOJSON]
   -           ...
             leaflet = L.map(id, {
                 preferCanvas: true,

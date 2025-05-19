@@ -84,7 +84,7 @@ TO BE CONTINUE ... here we manage a part of the marker display according to floo
            window.deviceData = data;  // Stockage des données globalement GEOJSON-MARKER
         $.each( data, function( device_id, device ) {
 
-  - Insert Line 169 [GEOJSON-MARKER] and  the } // Fin de EACH
+  - Insert Line 169 [GEOJSON-MARKER] and  the } // Fin de EACH (!!! NOT USE FOR THE MOMENT !!!)
   -      ...
          } else {
         // Debut GEOJSON-MARKER

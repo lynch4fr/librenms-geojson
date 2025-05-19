@@ -36,7 +36,7 @@ The steps in detail:
   - Export each data in geojson format
   - Copy your geojson files to /librenms/html/tiles
 - vi /librenms/html/js/librenms.js
-  - Add line 277 [CODE ICI GEOJSON]
+  - Add line ~277 [CODE ICI GEOJSON]
   -           ...
             leaflet = L.map(id, {
                 preferCanvas: true,
@@ -48,7 +48,7 @@ The steps in detail:
             let baseMaps = {};
             ...
 - vi /librenms/html/js/librenms.js
-  - Modify line 568
+  - Modify line ~568 Zoom tile.openstreetmap.org
   -          ...
         leaflet.setMaxZoom(24); // 20 in 24
             ...
@@ -77,7 +77,7 @@ TO BE CONTINUE ... here we manage a part of the marker display according to floo
   - Add 1 line to 504 
   -           'notes' => $device->notes,
 - vi /librenms/resources/views/map/fullscreen.blade.php
-  - Insert this 2 lines after line 143 in function refreshMap() {
+  - Insert this 2 lines after line ~143 in function refreshMap() {
   -     ...
         .done(function( data ) {
            //console.log(" Données des équipements reçues :", data);  // DEBUG 

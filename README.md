@@ -85,8 +85,8 @@ TO BE CONTINUE ... here we manage a part of the marker display according to floo
         $.each( data, function( device_id, device ) {
   - If needed :
   -      # chown -R librenms:librenms '/applis/librenms'
-         setfacl -d -m g::rwx /applis/librenms/bootstrap/cache /applis/librenms/storage /applis/librenms/logs /donnees/librenms/rrd
-         chmod -R ug=rwX /applis/librenms/bootstrap/cache /applis/librenms/storage /applis/librenms/logs /donnees/librenms/rrd
+         # setfacl -d -m g::rwx /applis/librenms/bootstrap/cache /applis/librenms/storage /applis/librenms/logs /donnees/librenms/rrd
+         # chmod -R ug=rwX /applis/librenms/bootstrap/cache /applis/librenms/storage /applis/librenms/logs /donnees/librenms/rrd
 
   - Insert Line 169 [GEOJSON-MARKER] and  the } // Fin de EACH (!!! NOT USE FOR THE MOMENT !!!)
   -      ...

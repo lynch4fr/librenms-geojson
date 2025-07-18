@@ -5,6 +5,8 @@ https://community.librenms.org/t/can-i-create-a-custom-floormap-floorplan-and-pl
 
 I’ve developed a piece of code to display the Librenms map with a floor selector like https://indoorequal.org.
 We’re lucky to have GeoJSON data for our buildings / floors / Ref / name / imported into Leaflet.
+(If you want to map your own buildings, you can use JOSM. The fundamentals are briefly explained here: | [JOSM](https://2020.foss4g-oceania.org/hubs/perth/assets/presos/Nimalika%20Fernando%20-%20Let's%20map%20indoors:%20starting%20indoor%20mapping%20with%20OSM.pdf)
+
 Here’s the result if you’re interested. This add-on is not in the form of a plugin, so you’ll have to modify the files manually each time you update (./daily.sh).
 
 The steps :

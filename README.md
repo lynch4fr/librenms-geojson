@@ -79,7 +79,7 @@ TO BE CONTINUE ... here we manage a part of the marker display according to floo
   - Add 1 line to 504 
   -           'notes' => $device->notes,
 - vi /librenms/resources/views/map/fullscreen.blade.php
-  - Insert this 2 lines after line ~143 in function refreshMap() {
+  - Insert this 2 lines after line ~123 in function refreshMap() {
   -     ...
         .done(function( data ) {
            //console.log(" Données des équipements reçues :", data);  // DEBUG 

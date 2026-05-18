@@ -88,31 +88,33 @@ floorControl.onAdd = function () {
 floorControl.addTo(leaflet);
 
 // Gérer le changement d'étage
-selector.addEventListener('change', function () {
-//    const selected = this.value;
-      window.selectedFloor = this.value;
-      console.log("Étage sélectionné :", window.selectedFloor); // DEBUG
+        selector.addEventListener('change', function () {
+            const selectedFloor = this.value;
+            window.selectedFloor = selectedFloor;
 
-    // Supprimer toutes les couches d’étages et les labels
-    Object.keys(floorLayers).forEach(f => {
-        leaflet.removeLayer(floorLayers[f]);
-        if (floorRefLabels[f]) {
-            leaflet.removeLayer(floorRefLabels[f]);
-        }
-    });
+            console.log("Étage sélectionné :", selectedFloor);
 
-    // Ajouter la couche sélectionnée
-    if (floorLayers[selectedFloor]) {
-        floorLayers[selectedFloor].addTo(leaflet);
-    }
+            // Supprimer toutes les couches d’étages et labels
+            Object.keys(floorLayers).forEach(f => {
+                leaflet.removeLayer(floorLayers[f]);
 
-    // Mettre à jour l'affichage des MRKER équipements quand on change d'étage
-    if (typeof window.updateEquipements === "function" && window.deviceData) {
-        window.updateEquipements(window.deviceData);
-    } else {
-        console.warn("Impossible de mettre à jour les équipements : updateEquipements ou deviceData manquant");
-    }
-});
+                if (floorRefLabels[f]) {
+                    leaflet.removeLayer(floorRefLabels[f]);
+                }
+            });
+
+            // Ajouter la couche sélectionnée
+            if (floorLayers[selectedFloor]) {
+                floorLayers[selectedFloor].addTo(leaflet);
+            }
+
+            // Mise à jour équipements
+            if (typeof window.updateEquipements === "function" && window.deviceData) {
+                window.updateEquipements(window.deviceData);
+            } else {
+                console.warn("updateEquipements ou deviceData manquant");
+            }
+        });
 
 // Affiche ou masque dynamiquement les labels "ref" selon le niveau de zoom
 leaflet.on('zoomend', function () {

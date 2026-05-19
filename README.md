@@ -35,7 +35,7 @@ The steps in detail:
         >;
         out skel qt;
         ...
-  - Another example to add a CUSTOM polygone. This polygone exists in [OpenstreetMap](https://www.openstreetmap.org/way/377446987) and can be extract on https://overpass-turbo.eu/ and add the CUSTOM polygone to your etage_0.geojson
+  - Another example to add a CUSTOM polygone. This polygone exists in [OpenstreetMap](https://www.openstreetmap.org/way/377446987) (right clic -> Query objets) and can be extract on https://overpass-turbo.eu/ and add the CUSTOM polygone to your etage_0.geojson
   -     ...
         [out:json];
         way(377446987);

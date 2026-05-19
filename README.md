@@ -35,14 +35,14 @@ The steps in detail:
         >;
         out skel qt;
         ...
-  - Another example to add a custom polygone. This polygone exists in [OpenstreetMap](https://www.openstreetmap.org/way/377446987) and can be extract on https://overpass-turbo.eu/ and add the custom polygone to your etage_0.geojson
+  - Another example to add a CUSTOM polygone. This polygone exists in [OpenstreetMap](https://www.openstreetmap.org/way/377446987) and can be extract on https://overpass-turbo.eu/ and add the CUSTOM polygone to your etage_0.geojson
   -     ...
         [out:json];
         way(377446987);
         (._;>;);
         out body;
         ...
-  - Export example just for the polynome
+  - Export example just for this polynome CUSTOM
   -     ...
         "comment": "AJOUT 19/05/2026",
         "type": "Feature",
@@ -73,7 +73,7 @@ The steps in detail:
         }
         },
     
-  - Export each data in geojson format  
+  - TO CONTINUE : Export each data in geojson format  
   - Copy your geojson files to /librenms/html/tiles
 - vi /librenms/html/js/librenms.js
   - Add line ~376 [CODE ICI GEOJSON]

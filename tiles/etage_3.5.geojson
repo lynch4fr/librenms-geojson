@@ -1,0 +1,64 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-05-02T13:36:00Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/399320610",
+        "indoor": "corridor",
+        "level": "3.5"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.7024931,
+              48.120167
+            ],
+            [
+              -1.7024938,
+              48.1201514
+            ],
+            [
+              -1.7024497,
+              48.1201505
+            ],
+            [
+              -1.7024496,
+              48.1201531
+            ],
+            [
+              -1.7024493,
+              48.1201589
+            ],
+            [
+              -1.702449,
+              48.1201661
+            ],
+            [
+              -1.7024536,
+              48.1201662
+            ],
+            [
+              -1.7024605,
+              48.1201664
+            ],
+            [
+              -1.7024723,
+              48.1201666
+            ],
+            [
+              -1.7024931,
+              48.120167
+            ]
+          ]
+        ]
+      },
+      "id": "way/399320610"
+    }
+  ]
+}

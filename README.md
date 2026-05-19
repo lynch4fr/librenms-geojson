@@ -35,7 +35,45 @@ The steps in detail:
         >;
         out skel qt;
         ...
-  - Export each data in geojson format
+  - Another example to add a custom polygone. This polygone exists in [OpenstreetMap](https://www.openstreetmap.org/way/377446987) and can be extract on https://overpass-turbo.eu/ and add the custom polygone to your etage_0.geojson
+  -     ...
+        [out:json];
+        way(377446987);
+        (._;>;);
+        out body;
+        ...
+  - Export example just for the polynome
+  -     ...
+        "comment": "AJOUT 19/05/2026",
+        "type": "Feature",
+        "properties": {
+        "@id": "way/377446987",
+        "ref": "Gymnase Cossec",
+        "building:levels": "2",
+        "building:min_level": "1",
+        "building:part": "yes"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+        [-1.7007167,48.1198155],
+        [-1.7006531,48.1198142],
+        [-1.7006202,48.1198135],
+        [-1.7005859,48.1198128],
+        [-1.7005859,48.1198088],
+        [-1.7005750,48.1198086],
+        [-1.7005645,48.1198083],
+        [-1.7004452,48.1198057],
+        [-1.7001196,48.1197988],
+        [-1.7001194,48.1198038],
+        [-1.7001074,48.1200579],
+        [-1.7007047,48.1200705],
+        [-1.7007167,48.1198155]
+        ]]
+        }
+        },
+    
+  - Export each data in geojson format  
   - Copy your geojson files to /librenms/html/tiles
 - vi /librenms/html/js/librenms.js
   - Add line ~376 [CODE ICI GEOJSON]

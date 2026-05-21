@@ -73,6 +73,7 @@ The steps in detail:
         }
         },
     
+  - IF the polygone doesn't exist on Openstreetmap, you can create your CUSTOM polygone with the software [JOSM](https://josm.openstreetmap.de/)
   - TO CONTINUE : Export each data in geojson format  
   - Copy your geojson files to /librenms/html/tiles
 - vi /librenms/html/js/librenms.js

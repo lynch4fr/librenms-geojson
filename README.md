@@ -74,6 +74,13 @@ The steps in detail:
         },
     
   - IF the polygone doesn't exist on Openstreetmap, you can create your CUSTOM polygone with the software [JOSM](https://josm.openstreetmap.de/)
+       -   Add Greffon PicLayer pour avoir un fond de carte [TUTO]([https://josm.openstreetmap.de/](https://www.youtube.com/watch?v=LZ65oFR3cH8)
+            - Accrocher 1 noeud à 1 chemin: Approcher le noeud + N
+            - Fusionner 2 polys: Selectionner les 2 + MAJ J
+            - Diviser 2 polys: Tracer la ligne de separation + ALT X
+            - Couper un chemin: Selection le neoud + P
+            - Fusionner 2 chemins: selectionner les 2 chemins + C
+            - Fusionner les noeuds: selection les noeuds + C
   - TO CONTINUE : Export each data in geojson format  
   - Copy your geojson files to /librenms/html/tiles
 - vi /librenms/html/js/librenms.js

@@ -77,7 +77,7 @@ The steps in detail:
        -   Add Greffon PicLayer pour avoir un fond de carte [TUTO]([https://josm.openstreetmap.de/](https://www.youtube.com/watch?v=LZ65oFR3cH8)
        - Tracer le batiment
             -  Menu Imagerie -> OpenstreetMap (pour voir les contours du batiment pour etre au plus juste)
-            -  Avec outil Batiment : raccourci B ( Opacité 30% ) ou avec l'outil Tracer
+            -  Avec outil Batiment : raccourci B ( Opacité 30% )
             -  Si besoin quelques Fusion de noeuds avec le chemin = N
        - Charger un fond de carte NCS/WLC du batiment
             - Menu Imagerie -> Nouveau calque image depuis un fichier

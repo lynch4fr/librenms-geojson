@@ -75,10 +75,13 @@ The steps in detail:
     
   - IF the polygone doesn't exist on Openstreetmap, you can create your CUSTOM polygone with the software [JOSM](https://josm.openstreetmap.de/)
        -   Add Greffon PicLayer pour avoir un fond de carte [TUTO]([https://josm.openstreetmap.de/](https://www.youtube.com/watch?v=LZ65oFR3cH8)
-       -   Menu Imagerie -> Nouveau calque image depuis un fichier
-            - Clic droit sur le calque -> Charger l'etalonnage de l'image : file.cal (si non il faut le calibrer avec "oeil+outils" et enregistrer l'etalonnage
-       - Tracer le batiment avec outil Batiment : raccourci B ( Opacité 30% )
+       - Tracer le batiment
+            -  Menu Imagerie -> OpenstreetMap (pour voir les contours du batiment pour etre au plus juste)
+            -  Avec outil Batiment : raccourci B ( Opacité 30% ) ou avec l'outil Tracer
             -  Si besoin quelques Fusion de noeuds avec le chemin = N
+       - Charger un fond de carte NCS/WLC du batiment
+            - Menu Imagerie -> Nouveau calque image depuis un fichier
+            - Clic droit sur le calque -> Charger l'etalonnage de l'image : file.cal (si non il faut le calibrer avec "oeil+outils" et enregistrer l'etalonnage
        - Tracer les pieces avec outil Tracer : raccourci A       
             - Accrocher 1 noeud à 1 chemin: Approcher le noeud + N
             - Fusionner 2 polys: Selectionner les 2 + MAJ J

@@ -73,7 +73,7 @@ The steps in detail:
         }
         },
     
-  - IF the polygone doesn't exist on Openstreetmap, you can create your CUSTOM polygone with the software [JOSM](https://josm.openstreetmap.de/)
+  - Another example IF the polygone doesn't exist on Openstreetmap, you can create your CUSTOM polygone with the software [JOSM](https://josm.openstreetmap.de/)
        -   Add Greffon PicLayer pour avoir un fond de carte [TUTO]([https://josm.openstreetmap.de/](https://www.youtube.com/watch?v=LZ65oFR3cH8)
        - Tracer le batiment
             -  Menu Imagerie -> OpenstreetMap (pour voir les contours du batiment pour etre au plus juste)
@@ -89,6 +89,7 @@ The steps in detail:
             - Couper un chemin: Selection le neoud + P
             - Fusionner 2 chemins: selectionner les 2 chemins + C
             - Fusionner les noeuds: selection les noeuds + C
+      - Sauvegarder les modifications en GEOJSON (pas en OSM)
   - TO CONTINUE : Export each data in geojson format  
   - Copy your geojson files to /librenms/html/tiles
 - vi /librenms/html/js/librenms.js

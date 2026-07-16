@@ -85,7 +85,7 @@ The steps in detail:
             - Avec outil Tracer : raccourci A
             - Avec outil Indoor: Assitant de cartographie interieur (indiquer Objet:ROOM + Nom:BLABLA + Appliquer )
             - Continuer ainsi
-       - Divers raccourcis :
+       - Divers raccourcis JOSM mais attention à la compatibilité Leaflet :
             - Accrocher 1 noeud à 1 chemin: Approcher le noeud + N
             - Fusionner 2 polys: Selectionner les 2 + MAJ J
             - Diviser 2 polys: Tracer la ligne de separation + ALT X
